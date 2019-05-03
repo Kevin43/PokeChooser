@@ -1,0 +1,21 @@
+﻿<Window x:Class="PokeChooser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PokeChooser"
+        mc:Ignorable="d"
+		Closing="OnClosing"
+        Title="PokeChooser" Height="450" Width="800">
+	<Grid x:Name="PopulateListButton">
+		<Button Content="Reroll Pokemon" Margin="300,350,300,25" Click="Button_Click"/>
+		<Image x:Name="PokeImage" HorizontalAlignment="Right" Height="256" Margin="0,0,276,96" VerticalAlignment="Bottom" Width="256"/>
+		<Button x:Name="BlockButton" Content="Add to block list" Margin="640,350,25,25" Click="Button_Click_1"/>
+		<TextBlock x:Name="PokeName" Margin="260,10,276,357" TextWrapping="Wrap" Text="No Pokemon yet." TextAlignment="Center" FontSize="36"/>
+		<TextBlock x:Name="PokesLeft" HorizontalAlignment="Left" Margin="22,0,0,25" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="61" Width="186" TextAlignment="Center" FontSize="20"><Run Text="Pokemon Left:"/><LineBreak/></TextBlock>
+		<ListView x:Name="PokeBlockedList" ItemsSource="{Binding blockedlistItems}" Margin="0,10,22,96" SelectionChanged="PokeBlockedList_SelectionChanged" MouseDoubleClick="PokeBlockedList_MouseDoubleClick" HorizontalAlignment="Right" Width="171"/>
+		<ListView x:Name="PokeList" ItemsSource="{Binding pokelistItems}" HorizontalAlignment="Left" Margin="22,10,0,96" Width="186" SelectionChanged="PokeList_SelectionChanged" MouseDoubleClick="PokeList_MouseDoubleClick"/>
+		<Button Content="Save List" HorizontalAlignment="Left" Margin="530,350,0,25" Width="75" Click="Button_Click_2"/>
+
+	</Grid>
+</Window>
